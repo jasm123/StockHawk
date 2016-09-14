@@ -17,6 +17,7 @@ public abstract class CursorRecyclerViewAdapter <VH extends RecyclerView.ViewHol
   private boolean dataIsValid;
   private int rowIdColumn;
   private DataSetObserver mDataSetObserver;
+
   public CursorRecyclerViewAdapter(Context context, Cursor cursor){
     mCursor = cursor;
     dataIsValid = cursor != null;
@@ -26,6 +27,8 @@ public abstract class CursorRecyclerViewAdapter <VH extends RecyclerView.ViewHol
       mCursor.registerDataSetObserver(mDataSetObserver);
     }
   }
+
+
 
   public Cursor getCursor(){
     return mCursor;
@@ -38,6 +41,8 @@ public abstract class CursorRecyclerViewAdapter <VH extends RecyclerView.ViewHol
     }
     return 0;
   }
+
+
 
   @Override public long getItemId(int position) {
     if (dataIsValid && mCursor != null && mCursor.moveToPosition(position)){

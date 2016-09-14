@@ -1,12 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@android:color/white"
+       android:orientation="vertical">
+       <TextView
+           android:id="@+id/symbol"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="#01579B"
+           android:text="googl"
+           android:textAllCaps="true"
+           android:textSize="20sp"
+           android:layout_gravity="left"
+           android:textColor="@android:color/white"
+           android:paddingLeft="16dp"
+           android:paddingTop="16dp"
+           android:paddingBottom="8dp"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="#01579B"
+           android:orientation="horizontal"
+           android:paddingLeft="16dp"
+           android:paddingRight="16dp">
+           <TextView
+               android:id="@+id/stock_price"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="35sp"
+               android:text="709.82"
+               android:layout_gravity="left|center_vertical"
+               android:textColor="@android:color/white"
+               />
+           <TextView
+               android:id="@+id/price_change"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:layout_gravity="bottom"
+               android:paddingLeft="16dp"
+               android:textColor="#00E676"
 
-    <com.db.chart.view.LineChartView
-        xmlns:chart="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/linechart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+               android:text="+4.93(0.70%)"
+               />
 
+
+       </LinearLayout>
+       <org.eazegraph.lib.charts.ValueLineChart
+           android:id="@+id/line_chart"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           app:egUseCubic="true"
+           app:egUseOverlapFill="true"
+           app:egIndicatorLineColor="#FE6DA8"
+           app:egIndicatorTextColor="#000000"
+           app:egLegendHeight="40dp"
+           app:egShowValueIndicator="true"
+           app:egActivateIndicatorShadow="true"
+           app:egIndicatorShadowColor="@android:color/darker_gray"
+           app:egCurveSmoothness="0.4"
+           android:visibility="gone"/>
+
+   </LinearLayout>
+
+
+    <TextView android:id="@+id/error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/loading_failed"
+        style="@style/ErrorMessageTextStyle"
+        android:visibility="gone"/>
+
+    <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+        android:id="@+id/progress_circle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        app:mlpb_progress_stoke_width="4dp"
+        app:mlpb_show_arrow="false"
+        app:mlpb_enable_circle_background="false"
+        app:mlpb_progress_color="@color/material_blue_700"
+        app:mlpb_progress_text_visibility="invisible" />
 </FrameLayout>
