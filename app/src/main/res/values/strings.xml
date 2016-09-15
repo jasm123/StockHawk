@@ -17,5 +17,7 @@
     <string name="loading_failed">Oops! Something went wrong. Check your internet connection and try again&#8230;</string>
     <string name="desc_add">Add a stock</string>
     <string name="add_widget">Add widget</string>
+    <string name="stock_saved">This stock is already saved!</string>
+    <string name="Error">Error applying batch insert</string>
 
 </resources>
