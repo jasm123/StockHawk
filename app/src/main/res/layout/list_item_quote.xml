@@ -17,15 +17,16 @@
         android:layout_width="20sp"
         android:layout_height="wrap_content"
         android:src="@drawable/green"
-        android:layout_gravity="left|center_vertical" />
+        android:layout_gravity="start|left|center_vertical" />
 
     <TextView
             android:id="@+id/stock_symbol"
             style="@style/StockSymbolTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
+            android:gravity="start|left|center_vertical"
         android:paddingLeft="6dp"
+        android:paddingStart="6dp"
             tools:text="GOOG"
             />
 
@@ -44,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingRight="10sp"
+        android:paddingEnd="10sp"
         tools:text="1000.00"
         />
     <TextView
@@ -53,6 +55,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="3dp"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
         android:paddingRight="3dp"
         tools:text="100%"
         />
@@ -64,6 +68,7 @@
         android:id="@+id/stock_name"
         android:text="Google , Inc."
         android:paddingLeft="42dp"
+        android:paddingStart="42dp"
         android:layout_gravity="top|center_vertical"
         android:textColor="@android:color/black"
     />
